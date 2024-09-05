@@ -2,11 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CheckOUT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckOUT!</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    hello
+<img id="bg" src="{{ url_for('static', filename='bg.png') }}">
+<img id="InfoImg" src="{{ url_for('static', filename='InfoImg.png') }}" style="display: none">
+<div class="card">
+    <div class="form-group">
+        <label for="date" typeof="text">Date:</label>
+        <input type="date" id="date" name="date">
+    </div>
+
+    <div class="form-group">
+        <label>Weather Options</label>
+        <div class="weather-options">
+            <label>Temperature<input type="range" id="temp"></label><br>
+            <label>Rain<input type="range" id="rain"></label><br>
+            <label>Wind<input type="range" id="wind"></label><br>
+        </div>
+    </div>
+
+    <button id="checkBtn">Check The Weather</button>
+
+    <div class="greenResult">
+        <p>According to weather guess <br><b>You can go out!</b></p>
+    </div>
+     <div class="redResult">
+        <p>According to weather guess <br><b>You shouldn"t go out!</b></p>
+    </div>
+</div>
+
+<div class="info">
+    <button id="Info">Info</button>
+</div>
+
+<div class="credit">Developed by <strong>Bedirhan KURT</strong></div>
+
+<script src="{{ url_for('static', filename='options.js') }}"></script>
 </body>
-<script src="{{ url_for('static', filename='script.js') }}"></script>
 </html>
