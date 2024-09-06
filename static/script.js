@@ -1,24 +1,35 @@
-// Chart.js ile basit bir grafik oluşturma
-const ctx = document.getElementById('workoutChart').getContext('2d');
-const workoutChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-        datasets: [{
-            label: 'Monthly Workouts',
-            data: [5, 7, 3, 6, 8, 10, 12, 9, 11],
-            backgroundColor: 'rgba(41, 128, 185, 0.2)',
-            borderColor: '#2980b9',
-            borderWidth: 2,
-            tension: 0.4
-        }]
-    },
-    options: {
-        responsive: true,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
+const info = document.getElementById("info");
+const attribution = document.getElementById("attribution");
+const card = document.getElementsByClassName("card")[0];
+const attributionCard = document.getElementsByClassName("attributionCard")[0];
+const InfoBtn = document.getElementById('Info')
+const InfoImg = document.getElementById('infoImg');
+
+let attributionDisplay =  false
+attribution.addEventListener("click", function() {
+    if (attributionDisplay === false) {
+        card.style.display = "none";
+        InfoImg.style.display = "none";
+        attributionCard.style.display = "block";
+        attributionDisplay = true
+    } else if (attributionDisplay === true) {
+        attributionCard.style.display = "none";
+        InfoImg.style.display = "none";
+        card.style.display = "block";
+        attributionDisplay = false
     }
-});
+})
+let infoDisplay = false
+InfoBtn.addEventListener("click", function() {
+    if (infoDisplay === false) {
+        card.style.display = "none";
+        attributionCard.style.display = "none";
+        InfoImg.style.display = "block";
+        infoDisplay = true
+    } else if (infoDisplay === true) {
+        InfoImg.style.display = "none";
+        attributionCard.style.display = "none";
+        card.style.display = "block";
+        infoDisplay = false
+    }
+})

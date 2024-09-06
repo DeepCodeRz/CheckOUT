@@ -53,10 +53,51 @@ label {
     font-weight: normal;
 }
 
-input[type="range"] {
-    margin-left: 20px;
+.range-slider {
+    position: relative;
+    width: 300px;
+    height: 25px;
 }
 
+.range-slider input[type="range"] {
+    position: absolute;
+    width: 100%;
+    -webkit-appearance: none;
+    background: none;
+    pointer-events: none; /* Etkileşim engelleme */
+}
+
+.range-slider input[type="range"]::-webkit-slider-thumb {
+    pointer-events: all; /* Tutamacları etkileşimli yap */
+    width: 15px;
+    height: 15px;
+    background: #3498db;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+.range-slider .slider {
+    position: relative;
+    height: 6px;
+    background-color: #ddd;
+    border-radius: 3px;
+}
+
+.range-slider .slider .track {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 3px;
+}
+
+.range-slider .slider .range {
+    position: absolute;
+    height: 100%;
+    background-color: #3498db;
+    border-radius: 3px;
+}
 button {
     padding: 10px 20px;
     background-color: #424242;
@@ -113,27 +154,36 @@ button:hover {
     color: #F5F5F5;
 }
 
-.info button {
+.menu {
+    display: flex;
+    flex-direction: column;
+    top: 20px;
+    left: 20px;
+    align-items: flex-start;
+    position: fixed;
+}
+
+.info, .attribution {
+    margin-bottom: 10px;
+}
+
+.info button, .attribution button {
     background-color: #229799;
     color: white;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 80px;
+    width: 120px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
 }
 
-.info button:hover {
+.info button:hover, .attribution button:hover {
     background-color: #1a7577;
 }
 
-.infoImg {
-    scale: 40%;
-}
-
-#InfoImg {
-    scale: 50%;
+#infoImg {
+    scale: 45%;
     border-radius: 30px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
@@ -143,4 +193,27 @@ button:hover {
     border-radius: 10px;
     border: 2px solid #424242;
     width: 100%;
+}
+
+.logo{
+    color: #F5F5F5;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.attributionCard {
+    z-index: 1;
+    background-color: #229799;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    width: 390px;
+    position: absolute;
+    display: none;
+    color: white;
+}
+
+.attributionCard p {
+    font-size: 18px;
+    color: white;
 }
