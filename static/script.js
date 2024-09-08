@@ -1,10 +1,35 @@
-const info = document.getElementById("info");
 const attribution = document.getElementById("attribution");
-const card = document.getElementsByClassName("card")[0];
 const attributionCard = document.getElementsByClassName("attributionCard")[0];
+const card = document.getElementsByClassName("card")[0];
 const InfoBtn = document.getElementById('Info')
 const InfoImg = document.getElementById('infoImg');
-const date = document.getElementById('date').value;
+const checkBtn = document.getElementById('checkBtn')
+
+checkBtn.addEventListener('click', function () {
+    const date = document.getElementById('date').value;
+    const minTemp = document.getElementById('minTemp').value;
+    const maxTemp = document.getElementById('maxTemp').value;
+    const minRain = document.getElementById('minRain').value;
+    const maxRain = document.getElementById('maxRain').value;
+    const minWind = document.getElementById('minWind').value;
+    const maxWind = document.getElementById('maxWind').value;
+
+    fetch("/options", {
+
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                date: date,
+                minTemp: minTemp,
+                maxTemp: maxTemp,
+                minRain: minRain,
+                 maxRain: maxRain,
+                minWind: minWind,
+                maxWind: maxWind
+            })
+        }
+    ).then(res => res.json()).then((res) => {console.log(res)})
+})
 
 let attributionDisplay =  false
 attribution.addEventListener("click", function() {

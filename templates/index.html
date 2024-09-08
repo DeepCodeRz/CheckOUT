@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CheckOUT!</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        #map {
+            height: 200px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 <img id="bg" src="{{ url_for('static', filename='bg.png') }}">
@@ -14,6 +22,8 @@
     <h1 class="logo">CheckOUT!</h1>
 
     <div class="form-group">
+        <div id="map"></div>
+        <p>Chosen cordinates: <span id="coordinates"></span></p>
         <div class="date">
             <label for="date" typeof="text">Date:</label>
             <input type="date" id="date" name="date">
@@ -92,6 +102,23 @@
 
 <div class="credit">Developed by <strong>Bedirhan KURT</strong></div>
 
-<script src="{{ url_for('static', filename='script.js') }}"></script
+<script>
+    var map = L.map('map').setView([51.505, -0.09], 13); // Başlangıç konumu ve zoom seviyesi
+
+// OpenStreetMap katmanı ekle
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+// Kullanıcının tıkladığı yere işaretleyici ekleyin ve koordinatları gösterin
+var marker;
+map.on('click', function(e) {
+    if (marker) {
+        map.removeLayer(marker); // Önceki işaretleyiciyi kaldır
+    }
+    marker = L.marker(e.latlng).addTo(map); // Yeni işaretleyici ekle
+    document.getElementById("coordinates").textContent = e.latlng.lat + ", " + e.latlng.lng;})// Koordinatları göster</script>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
