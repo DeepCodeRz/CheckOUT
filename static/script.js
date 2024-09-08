@@ -4,6 +4,7 @@ const card = document.getElementsByClassName("card")[0];
 const attributionCard = document.getElementsByClassName("attributionCard")[0];
 const InfoBtn = document.getElementById('Info')
 const InfoImg = document.getElementById('infoImg');
+const date = document.getElementById('date').value;
 
 let attributionDisplay =  false
 attribution.addEventListener("click", function() {

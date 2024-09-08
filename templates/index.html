@@ -12,49 +12,56 @@
 
 <div class="card">
     <h1 class="logo">CheckOUT!</h1>
-    <div class="form-group">
-        <label for="date" typeof="text">Date:</label>
-        <input type="date" id="date" name="date">
-    </div>
 
     <div class="form-group">
+        <div class="date">
+            <label for="date" typeof="text">Date:</label>
+            <input type="date" id="date" name="date">
+        </div>
+
+        <div class="segmented-control">
+            <input type="radio" name="segment" id="night" checked>
+            <label for="night">Night</label>
+
+            <input type="radio" name="segment" id="morning">
+            <label for="morning">Morning</label>
+
+            <input type="radio" name="segment" id="afternoon">
+            <label for="afternoon">Afternoon</label>
+
+            <input type="radio" name="segment" id="evening">
+            <label for="evening">Evening</label>
+        </div>
+
         <label>Weather Options</label>
         <div class="weather-options">
-            <label>Temperature
+            <label>Temperature (Min-Max)
                 <div class="range-slider">
-                    <input type="range" id="tempMin" min="-10" max="40" value="10">
-                    <input type="range" id="tempMax" min="-10" max="40" value="30">
-                    <div class="slider">
-                        <div class="track"></div>
-                        <div class="range"></div>
-                    </div>
-                    <output id="tempOutput">10 - 30</output>
+                    <input name="minTemp" type="range" id="minTemp" min="-10" max="40" value="0" oninput="this.nextElementSibling.value = this.value">
+                    <output>0</output> C
+                    <input name="maxTemp" type="range" id="maxTemp" min="-10" max="40" value="0" oninput="this.nextElementSibling.value = this.value">
+                    <output>0</output> C
                 </div>
             </label><br>
 
-            <label>Rain
+            <label>Rain (Min-Max)
                 <div class="range-slider">
-                    <input type="range" id="rainMin" min="-10" max="40" value="5">
-                    <input type="range" id="rainMax" min="-10" max="40" value="20">
-                    <div class="slider">
-                        <div class="track"></div>
-                        <div class="range"></div>
-                    </div>
-                    <output id="rainOutput">5 - 20</output>
+                    <input name="minRain" type="range" id="minRain" min="0.00" max="6.00" step="0.1" value="0" oninput="this.nextElementSibling.value = this.value">
+                    <output>0</output> mm
+                    <input name="maxRain" type="range" id="maxRain" min="0.00" max="6.00" step="0.1" value="0" oninput="this.nextElementSibling.value = this.value">
+                    <output>0</output> mm
                 </div>
             </label><br>
 
-            <label>Wind
+            <label>Wind (Min-Max)
                 <div class="range-slider">
-                    <input type="range" id="windMin" min="-10" max="40" value="15">
-                    <input type="range" id="windMax" min="-10" max="40" value="25">
-                    <div class="slider">
-                        <div class="track"></div>
-                        <div class="range"></div>
-                    </div>
-                    <output id="windOutput">15 - 25</output>
+                    <input name="minWind" type="range" id="minWind" min="1" max="12" value="5" oninput="this.nextElementSibling.value = this.value">
+                    <output>0</output> m/s
+                    <input name="maxWind" type="range" id="maxWind" min="1" max="12" value="5" oninput="this.nextElementSibling.value = this.value">
+                    <output>0</output> m/s
                 </div>
-            </label><br>
+            </label>
+            <p style="color: red; font-size: 14px; width: 100%; display: none;">You gave invalid values. <br>Please check the values and try again.</p>
         </div>
     </div>
 
@@ -63,7 +70,7 @@
     <div class="greenResult">
         <p>According to weather guess <br><b>You can go out!</b></p>
     </div>
-     <div class="redResult">
+    <div class="redResult">
         <p>According to weather guess <br><b>You shouldn't go out!</b></p>
     </div>
 </div>
@@ -79,13 +86,12 @@
 
 <div class="attributionCard">
 
-    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-lisens" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Data from MET Norway and licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Navngivelse 4.0 Internasjonal lisens</a>
+    <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-lisens" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Data from MET Norway and licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Navngivelse 4.0 Internasjonal lisens</a>
 </div>
 
 
 <div class="credit">Developed by <strong>Bedirhan KURT</strong></div>
 
-<script src="{{ url_for('static', filename='script.js') }}"></script>
-<script src="{{ url_for('static', filename='rangeSliders.js') }}"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script
 </body>
 </html>
