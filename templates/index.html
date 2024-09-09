@@ -15,11 +15,10 @@
     </style>
 </head>
 <body>
-<img id="bg" src="{{ url_for('static', filename='bg.png') }}">
 <img id="infoImg" src="{{ url_for('static', filename='info.png') }}" style="display: none">
 
 <div class="card">
-    <h1 class="logo">CheckOUT!</h1>
+    <p class="logo">CheckOUT!</p>
 
     <div class="form-group">
         <div class="map">
@@ -34,9 +33,6 @@
 
 
         <div class="segmented-control">
-            <input type="radio" name="segment" id="night" checked>
-            <label for="night">Night</label>
-
             <input type="radio" name="segment" id="morning">
             <label for="morning">Morning</label>
 
@@ -45,6 +41,9 @@
 
             <input type="radio" name="segment" id="evening">
             <label for="evening">Evening</label>
+
+            <input type="radio" name="segment" id="night">
+            <label for="night">Night</label>
         </div>
 
         <label>Weather Options</label>
@@ -78,16 +77,17 @@
             <p id="error0" style="color: red; font-size: 14px; width: 100%; display: none;">You gave invalid values. Please check the values and try again.</p>
             <p id="error1" style="color: red; font-size: 14px; width: 100%; display: none;">Please select a location.</p>
             <p id="error2" style="color: red; font-size: 14px; width: 100%; display: none;">Please select a date.</p>
+            <p id="error3" style="color: red; font-size: 14px; width: 100%; display: none;">There is no data about for these date/time in selected location.</p>
 
         </div>
     </div>
 
     <button id="checkBtn">Check The Weather</button>
 
-    <div class="greenResult">
+    <div id="greenResult" class="greenResult" style="display: none">
         <p>According to weather guess <br><b>You can go out!</b></p>
     </div>
-    <div class="redResult">
+    <div id="redResult" class="redResult" style="display: none">
         <p>According to weather guess <br><b>You shouldn't go out!</b></p>
     </div>
 </div>

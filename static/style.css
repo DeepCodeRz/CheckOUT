@@ -13,25 +13,23 @@ body {
     height: 100vh;
 }
 
-#bg{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
 .card {
     z-index: 1;
-    background-color: #229799;
+    background-color: #F5F5F5;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     width: 600px;
     position: relative;
-    scale: 80%;
+    scale: 75%;
 }
 
-h2 {
+.logo{
+    font-size: 50px;
+    font-weight: normal;
+    color: #229799;
+    text-align: center;
     margin-bottom: 20px;
-    color: #F5F5F5;
 }
 
 .form-group {
@@ -90,7 +88,7 @@ label {
 }
 
 .segmented-control input[type="radio"]:checked + label {
-    background-color: #3498db;
+    background-color: #229799;
     color: white;
 }
 
@@ -100,11 +98,6 @@ label {
 
 .segmented-control label:last-child {
     border-right: none;
-}
-
-.segmented-control input[type="radio"]:checked + label {
-    background-color: #3498db;
-    color: white;
 }
 
 .segmented-control label:hover {
@@ -117,7 +110,7 @@ label {
 
 button {
     padding: 10px 20px;
-    background-color: #424242;
+    background-color: #229799;
     color: white;
     border: none;
     border-radius: 5px;
@@ -144,7 +137,6 @@ button:hover {
     border-radius: 12px;
     cursor: default;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    display: none;
 }
 
 .redResult {
@@ -161,7 +153,6 @@ button:hover {
     border-radius: 12px;
     cursor: default;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    display: none;
 }
 
 .credit{
@@ -203,12 +194,6 @@ button:hover {
     scale: 45%;
     border-radius: 30px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
-.logo{
-    color: #F5F5F5;
-    text-align: center;
-    margin-bottom: 20px;
 }
 
 .attributionCard {
