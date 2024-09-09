@@ -24,8 +24,9 @@ body {
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    width: 700px;
+    width: 600px;
     position: relative;
+    scale: 80%;
 }
 
 h2 {

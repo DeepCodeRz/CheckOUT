@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <style>
         #map {
-            height: 150px;
+            height: 220px;
             width: 100%;
         }
     </style>
@@ -75,7 +75,10 @@
                     <output>0</output> m/s
                 </div>
             </label>
-            <p style="color: red; font-size: 14px; width: 100%; display: none;">You gave invalid values. <br>Please check the values and try again.</p>
+            <p id="error0" style="color: red; font-size: 14px; width: 100%; display: none;">You gave invalid values. Please check the values and try again.</p>
+            <p id="error1" style="color: red; font-size: 14px; width: 100%; display: none;">Please select a location.</p>
+            <p id="error2" style="color: red; font-size: 14px; width: 100%; display: none;">Please select a date.</p>
+
         </div>
     </div>
 

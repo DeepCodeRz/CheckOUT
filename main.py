@@ -13,22 +13,37 @@ def options():
     lat = data['lat']
     lng = data['lng']
     date = data['date']
-    minTemp = data['minTemp']
-    maxTemp = data['maxTemp']
-    minPrecipitation = data['minPrecipitation']
-    maxPrecipitation = data['maxPrecipitation']
-    minWind = data['minWind']
-    maxWind = data['maxWind']
+    minTemp = int(data['minTemp'])
+    maxTemp = int(data['maxTemp'])
+    minPrecipitation = float(data['minPrecipitation'])
+    maxPrecipitation = float(data['maxPrecipitation'])
+    minWind = int(data['minWind'])
+    maxWind = int(data['maxWind'])
+
+    print(minWind, maxWind)
+    if minTemp > maxTemp:
+        print(minTemp, maxTemp)
+        return jsonify({"error0": "Invalid options!"})
+    elif minPrecipitation > maxPrecipitation:
+        print(minPrecipitation, maxPrecipitation)
+        return jsonify({"error0": "Invalid options!"})
+    elif minWind > maxWind:
+        print(minWind, maxWind)
+        return jsonify({"error0": "Invalid options!"})
+    else:
+        return jsonify({"ok": "ok!"})
+
 
     print(lat, lng, date, minTemp, maxTemp, minPrecipitation, maxPrecipitation)
 
-    url = "https://api.met.no/weatherapi/locationforecast/2.0/mini.json?lat=53&lon=1"
+    url = f"https://api.met.no/weatherapi/locationforecast/2.0/mini.json?lat={lat}&lon={lng}"
 
     headers = {
         'User-Agent': 'CheckOUT!/1.0 (bedirhan_kurt_@outlook.com)'
     }
 
     data = requests.get(url, headers=headers).json()
+    print(data)
 
     def get_weather_data(data, date, time):
         for item in data.get('forecast', []):
