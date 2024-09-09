@@ -1,8 +1,19 @@
 from flask import Flask, render_template, request, jsonify
 import requests
+import json
 
 app = Flask(__name__)
 
+def get_data(timeseries, target_time):
+    entry = next((ts for ts in timeseries if ts['time'] == target_time), None)
+    if entry:
+        details = entry['data']['instant']['details']
+        return {
+            'temperature': details.get('air_temperature'),
+            'wind_speed': details.get('wind_speed'),
+            'precipitation': entry['data']['next_1_hours']['details'].get('precipitation_amount')
+        }
+    return None
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -31,43 +42,27 @@ def options():
         print(minWind, maxWind)
         return jsonify({"error0": "Invalid options!"})
     else:
-        return jsonify({"ok": "ok!"})
 
+        url = f"https://api.met.no/weatherapi/locationforecast/2.0/mini.json?lat={lat}&lon={lng}"
 
-    print(lat, lng, date, minTemp, maxTemp, minPrecipitation, maxPrecipitation)
+        headers = {
+            'User-Agent': 'CheckOUT!/1.0 (bedirhan_kurt_@outlook.com)'
+        }
 
-    url = f"https://api.met.no/weatherapi/locationforecast/2.0/mini.json?lat={lat}&lon={lng}"
+        data = requests.get(url, headers=headers).json()
+        print(data)
 
-    headers = {
-        'User-Agent': 'CheckOUT!/1.0 (bedirhan_kurt_@outlook.com)'
-    }
+        time = request.args.get('time', '2024-09-09T10:00:00Z')
+        timeseries = data['properties']['timeseries']
+        weather_data = get_data(timeseries, time)
 
-    data = requests.get(url, headers=headers).json()
-    print(data)
-
-    def get_weather_data(data, date, time):
-        for item in data.get('forecast', []):
-            if item['date'] == date and item['time'] == time:
-                return {
-                    'temperature': item['temperature'],
-                    'wind_speed': item['wind']['speed'],
-                    'wind_direction': item['wind']['direction'],
-                    'rain': item['precipitation']['rain']
-                }
-        return 0
-
-    date = '2024-09-08'
-    time = '12:00:00'
-    weather_data = get_weather_data(data, date, time)
-
-    if weather_data:
-        print(f"Temperature: {weather_data['temperature']}°C")
-        print(f"Wind Speed: {weather_data['wind_speed']} km/h")
-        print(f"Wind Direction: {weather_data['wind_direction']}")
-        print(f"Rain: {weather_data['rain']} mm")
-    else:
-        print("No data found for the specified date and time.")
+        if weather_data:
+            print(f"Temperature: {weather_data['temperature']}°C")
+            print(f"Wind Speed: {weather_data['wind_speed']} km/h")
+            print(f"Rain: {weather_data['precipitation']} mm")
+        else:
+            print("No data found for the specified date and time.")
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5005)
+    app.run(debug=True, port=5002)
