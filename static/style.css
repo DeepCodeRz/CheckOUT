@@ -27,13 +27,12 @@ body {
 .logo{
     font-size: 50px;
     font-weight: normal;
-    color: #229799;
+    color: #2d729f;
     text-align: center;
     margin-bottom: 20px;
 }
 
 .form-group {
-    margin-bottom: 10px;
     text-align: left;
     background-color: #F5F5F5;
     border-radius: 10px;
@@ -46,13 +45,12 @@ label {
     font-weight: bold;
 
 }
-
-.map{
-    margin-bottom: 10px;
+.option{
+    margin-bottom: 30px;
 }
+
 #date {
     padding: 10px;
-    margin-bottom: 10px;
     border-radius: 10px;
     border: 2px solid #424242;
     width: 100%;
@@ -60,11 +58,11 @@ label {
 
 .segmented-control {
     display: inline-flex;
+    width: 100%;
+    justify-content: space-around;
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
-    margin-top: 15px;
-    margin-bottom: 20px;
 }
 
 .segmented-control input[type="radio"] {
@@ -72,7 +70,9 @@ label {
 }
 
 .segmented-control label {
-    padding: 10px 10px;
+    flex: 1;
+    padding: 10px 0;
+    text-align: center;
     cursor: pointer;
     background-color: #f1f1f1;
     border-right: 1px solid #ccc;
@@ -88,7 +88,7 @@ label {
 }
 
 .segmented-control input[type="radio"]:checked + label {
-    background-color: #229799;
+    background-color: #2d729f;
     color: white;
 }
 
@@ -109,18 +109,18 @@ label {
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #229799;
+    height: 60px;
+    background-color: #2d729f;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
-    font-size: 16px;
+    font-size: 22px;
 }
 
 button:hover {
-    background-color: #3a3a3a;
+    background-color: #215373;
 }
 
 .greenResult {
@@ -176,7 +176,7 @@ button:hover {
 }
 
 .info button, .attribution button {
-    background-color: #229799;
+    background-color: #2d729f;
     color: white;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
@@ -187,7 +187,7 @@ button:hover {
 }
 
 .info button:hover, .attribution button:hover {
-    background-color: #1a7577;
+    background-color: #215373;
 }
 
 #infoImg {
@@ -198,7 +198,7 @@ button:hover {
 
 .attributionCard {
     z-index: 1;
-    background-color: #229799;
+    background-color: #2d729f;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -213,6 +213,7 @@ button:hover {
     color: white;
 }
 
-p{
+p {
     width: 50%;
+    margin-top: 15px;
 }

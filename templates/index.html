@@ -11,6 +11,8 @@
         #map {
             height: 220px;
             width: 100%;
+            border: #2d729f 1px solid;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -21,18 +23,21 @@
     <p class="logo">CheckOUT!</p>
 
     <div class="form-group">
-        <div class="map">
+        <div class="map option">
+            <h3 style="margin-bottom: 10px">Mark your location:</h3>
             <div id="map"></div>
             <p>Chosen coordinates: ~ <span id="coordinates"></span></p>
+            <p id="error1" style="color: red; font-size: 18px; width: 100%; display: none;">Please select a location.</p>
         </div>
 
-        <div class="date">
+        <div class="date option">
             <label for="date" typeof="text">Date:</label>
             <input type="date" id="date" name="date">
+            <p id="error2" style="color: red; font-size: 18px; width: 100%; display: none;">Please select a date.</p>
         </div>
 
 
-        <div class="segmented-control">
+        <div class="segmented-control option">
             <input type="radio" name="segment" id="morning">
             <label for="morning">Morning</label>
 
@@ -46,8 +51,8 @@
             <label for="night">Night</label>
         </div>
 
-        <label>Weather Options</label>
-        <div class="weather-options">
+        <div class="weather-options option">
+            <label style="font-weight: bold">Weather Options</label>
             <label>Temperature (Min-Max)
                 <div class="range-slider">
                     <input name="minTemp" type="range" id="minTemp" min="-10" max="40" value="0" oninput="this.nextElementSibling.value = this.value">
@@ -58,7 +63,7 @@
             </label><br>
 
             <label>Precipitation (Min-Max)
-                <div class="range-slider">
+                <div class="range-slider ">
                     <input name="minPrecipitation" type="range" id="minPrecipitation" min="0.00" max="6.00" step="0.1" value="0" oninput="this.nextElementSibling.value = this.value">
                     <output>0</output> mm
                     <input name="maxPrecipitation" type="range" id="maxPrecipitation" min="0.00" max="6.00" step="0.1" value="0" oninput="this.nextElementSibling.value = this.value">
@@ -74,10 +79,8 @@
                     <output>0</output> m/s
                 </div>
             </label>
-            <p id="error0" style="color: red; font-size: 14px; width: 100%; display: none;">You gave invalid values. Please check the values and try again.</p>
-            <p id="error1" style="color: red; font-size: 14px; width: 100%; display: none;">Please select a location.</p>
-            <p id="error2" style="color: red; font-size: 14px; width: 100%; display: none;">Please select a date.</p>
-            <p id="error3" style="color: red; font-size: 14px; width: 100%; display: none;">There is no data about for these date/time in selected location.</p>
+            <p id="error0" style="color: red; font-size: 18px; width: 100%; display: none;">You gave invalid values. Please check the values and try again.</p>
+            <p id="error3" style="color: red; font-size: 18px; width: 100%; display: none;">There is no data about for these date/time in selected location.</p>
 
         </div>
     </div>
