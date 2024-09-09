@@ -10,29 +10,48 @@ def index():
 @app.route('/options', methods=['POST'])
 def options():
     data = request.json
+    lat = data['lat'],
+    lng = data['lng'],
     date = data['date']
     minTemp = data['minTemp']
     maxTemp = data['maxTemp']
-    minRain = data['minRain']
-    maxRain = data['maxRain']
+    minPrecipitation = data['minPrecipitation']
+    maxPrecipitation = data['maxPrecipitation']
     minWind = data['minWind']
     maxWind = data['maxWind']
 
-    print(minTemp, maxTemp, minRain, maxRain)
+    print(lat, lng, date, minTemp, maxTemp, minPrecipitation, maxPrecipitation)
 
-    url = "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=59.91&lon=10.75"
+    url = "https://api.met.no/weatherapi/locationforecast/2.0/mini.json?lat=53&lon=1"
 
     headers = {
         'User-Agent': 'CheckOUT!/1.0 (bedirhan_kurt_@outlook.com)'
     }
 
-    response = requests.get(url, headers=headers)
+    data = requests.get(url, headers=headers).json()
 
-    if response.status_code == 200:
-        data = response.json()
-        print(data)
+    def get_weather_data(data, date, time):
+        for item in data.get('forecast', []):
+            if item['date'] == date and item['time'] == time:
+                return {
+                    'temperature': item['temperature'],
+                    'wind_speed': item['wind']['speed'],
+                    'wind_direction': item['wind']['direction'],
+                    'rain': item['precipitation']['rain']
+                }
+        return 0
+
+    date = '2024-09-08'
+    time = '12:00:00'
+    weather_data = get_weather_data(data, date, time)
+
+    if weather_data:
+        print(f"Temperature: {weather_data['temperature']}°C")
+        print(f"Wind Speed: {weather_data['wind_speed']} km/h")
+        print(f"Wind Direction: {weather_data['wind_direction']}")
+        print(f"Rain: {weather_data['rain']} mm")
     else:
-        print(f"Failed to fetch data: {response.status_code}")
+        print("No data found for the specified date and time.")
 
 
 if __name__ == '__main__':

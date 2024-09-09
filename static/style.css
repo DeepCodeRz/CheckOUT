@@ -48,6 +48,9 @@ label {
 
 }
 
+.map{
+    margin-bottom: 10px;
+}
 #date {
     padding: 10px;
     margin-bottom: 10px;
@@ -225,5 +228,5 @@ button:hover {
 }
 
 p{
-    width: 10%;
+    width: 50%;
 }
