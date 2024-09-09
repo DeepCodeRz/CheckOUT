@@ -10,8 +10,8 @@ def index():
 @app.route('/options', methods=['POST'])
 def options():
     data = request.json
-    lat = data['lat'],
-    lng = data['lng'],
+    lat = data['lat']
+    lng = data['lng']
     date = data['date']
     minTemp = data['minTemp']
     maxTemp = data['maxTemp']

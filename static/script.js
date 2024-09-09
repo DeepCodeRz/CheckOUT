@@ -35,13 +35,12 @@ checkBtn.addEventListener('click', function () {
     const minWind = document.getElementById('minWind').value;
     const maxWind = document.getElementById('maxWind').value;
 
-
     fetch("/options", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
-            lat: toString(lat),
-            lng: toString(lng),
+            lat: lat,
+            lng: lng,
             date: date,
             minTemp: minTemp,
             maxTemp: maxTemp,
