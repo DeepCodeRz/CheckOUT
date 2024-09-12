@@ -108,6 +108,10 @@ label {
     font-weight: normal;
 }
 
+.range {
+    margin-left: 20px;
+}
+
 button {
     height: 60px;
     background-color: #2d729f;
@@ -116,11 +120,15 @@ button {
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
-    font-size: 22px;
+    font-size: 16px;
 }
 
 button:hover {
     background-color: #215373;
+}
+
+#checkBtn {
+    font-size: 22px;
 }
 
 .greenResult {

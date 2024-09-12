@@ -1,3 +1,17 @@
+let today = new Date();
+const year = today.getFullYear();
+let month = today.getMonth() + 1;
+const day = today.getDate();
+let date = document.getElementById("date")
+
+if (month.length !== 2) {
+    month = "0" + month;
+}
+
+today = `${year}-${month}-${day}`;
+
+date.value = today
+
 let lat;
 let lng;
 let map = L.map('map').setView([40.999, 29], 10);
@@ -12,6 +26,9 @@ map.on('click', function(e) {
         map.removeLayer(marker);
     }
     marker = L.marker(e.latlng).addTo(map);
+    if (marker && error1.style.display === "block") {
+        error1.style.display = "none"
+    }
 
     lat = Math.round(e.latlng.lat);
     lng = Math.round(e.latlng.lng);
@@ -28,18 +45,27 @@ const checkBtn = document.getElementById('checkBtn');
 const error0 = document.getElementById('error0');
 const error1 = document.getElementById('error1');
 const error2 = document.getElementById('error2');
-const error3 = document.getElementById('error3');
 const greenResult = document.getElementById('greenResult');
 const redResult = document.getElementById('redResult');
 
 checkBtn.addEventListener('click', function () {
+    const date = document.getElementById('date').value;
+    const minTemp = document.getElementById('minTemp').value;
+    const maxTemp = document.getElementById('maxTemp').value;
+    const minPrecipitation = document.getElementById('minPrecipitation').value;
+    const maxPrecipitation = document.getElementById('maxPrecipitation').value;
+    const minWind = document.getElementById('minWind').value;
+    const maxWind = document.getElementById('maxWind').value;
+
+
+
     if (lat === undefined || lng === undefined) {
         error1.style.display = 'block';
     } else {
         error1.style.display = 'none';
     }
 
-    if (error0.style.display === 'none' && error1.style.display === 'none' && error2.style.display === 'none') {
+    if (error0.style.display === 'none' && error1.style.display === 'none') {
         let time = document.getElementsByName("segment")
         for (i in time) {
             if (time[i].checked) {
@@ -47,19 +73,7 @@ checkBtn.addEventListener('click', function () {
                 break
             }
         }
-        const date = document.getElementById('date').value;
-        const minTemp = document.getElementById('minTemp').value;
-        const maxTemp = document.getElementById('maxTemp').value;
-        const minPrecipitation = document.getElementById('minPrecipitation').value;
-        const maxPrecipitation = document.getElementById('maxPrecipitation').value;
-        const minWind = document.getElementById('minWind').value;
-        const maxWind = document.getElementById('maxWind').value;
 
-        if (date === "") {
-            error2.style.display = 'block';
-        } else {
-            error2.style.display = 'none';
-        }
         console.log(date)
 
         fetch("/options", {
@@ -82,8 +96,8 @@ checkBtn.addEventListener('click', function () {
                 console.log(data);
                 if (data.error0) {
                     error0.style.display = 'block';
-                } else if (data.error3) {
-                    error3.style.display = 'block';
+                } else if (data.error2) {
+                    error2.style.display = 'block';
                 } else if (data.true) {
                     redResult.style.display = 'none';
                     greenResult.style.display = 'block';

@@ -32,13 +32,12 @@
 
         <div class="date option">
             <label for="date" typeof="text">Date:</label>
-            <input type="date" id="date" name="date">
-            <p id="error2" style="color: red; font-size: 18px; width: 100%; display: none;">Please select a date.</p>
+            <input type="date" id="date" name="date" value="2024-9-11">
         </div>
 
 
         <div class="segmented-control option">
-            <input type="radio" name="segment" id="morning">
+            <input type="radio" name="segment" id="morning" checked>
             <label for="morning">Morning</label>
 
             <input type="radio" name="segment" id="afternoon">
@@ -56,9 +55,9 @@
             <label>Temperature (Min-Max)
                 <div class="range-slider">
                     <input name="minTemp" type="range" id="minTemp" min="-10" max="40" value="0" oninput="this.nextElementSibling.value = this.value">
-                    <output>0</output> C
-                    <input name="maxTemp" type="range" id="maxTemp" min="-10" max="40" value="0" oninput="this.nextElementSibling.value = this.value">
-                    <output>0</output> C
+                    <output>0</output> °C
+                    <input name="maxTemp" type="range" class="range" id="maxTemp" min="-10" max="40" value="0" oninput="this.nextElementSibling.value = this.value">
+                    <output>0</output> °C
                 </div>
             </label><br>
 
@@ -66,7 +65,7 @@
                 <div class="range-slider ">
                     <input name="minPrecipitation" type="range" id="minPrecipitation" min="0.00" max="6.00" step="0.1" value="0" oninput="this.nextElementSibling.value = this.value">
                     <output>0</output> mm
-                    <input name="maxPrecipitation" type="range" id="maxPrecipitation" min="0.00" max="6.00" step="0.1" value="0" oninput="this.nextElementSibling.value = this.value">
+                    <input name="maxPrecipitation" type="range" class="range" id="maxPrecipitation" min="0.00" max="6.00" step="0.1" value="0" oninput="this.nextElementSibling.value = this.value">
                     <output>0</output> mm
                 </div>
             </label><br>
@@ -75,7 +74,7 @@
                 <div class="range-slider">
                     <input name="minWind" type="range" id="minWind" min="1" max="12" value="5" oninput="this.nextElementSibling.value = this.value">
                     <output>0</output> m/s
-                    <input name="maxWind" type="range" id="maxWind" min="1" max="12" value="5" oninput="this.nextElementSibling.value = this.value">
+                    <input name="maxWind" type="range" class="range" id="maxWind" min="1" max="12" value="5" oninput="this.nextElementSibling.value = this.value">
                     <output>0</output> m/s
                 </div>
             </label>
@@ -85,7 +84,7 @@
         </div>
     </div>
 
-    <button id="checkBtn">Check The Weather</button>
+    <button id="checkBtn">Check The Weather!</button>
 
     <div id="greenResult" class="greenResult" style="display: none">
         <p>According to weather guess <br><b>You can go out!</b></p>

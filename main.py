@@ -33,13 +33,10 @@ def options():
     maxWind = int(data['maxWind'])
 
     if minTemp > maxTemp:
-        print(minTemp, maxTemp)
         return jsonify({"error0": "Invalid options!"})
     elif minPrecipitation > maxPrecipitation:
-        print(minPrecipitation, maxPrecipitation)
         return jsonify({"error0": "Invalid options!"})
     elif minWind > maxWind:
-        print(minWind, maxWind)
         return jsonify({"error0": "Invalid options!"})
     else:
 
