@@ -6,6 +6,7 @@
     <title>CheckOUT!</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/urx8ynj.css">
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <style>
         #map {
@@ -20,7 +21,7 @@
 <img id="infoImg" src="{{ url_for('static', filename='info.png') }}" style="display: none">
 
 <div class="card">
-    <p class="logo">CheckOUT!</p>
+    <p class="logo">Check<strong>OUT!</strong></p>
 
     <div class="form-group">
         <div class="map option">
@@ -30,13 +31,13 @@
             <p id="error1" style="color: red; font-size: 18px; width: 100%; display: none;">Please select a location.</p>
         </div>
 
-        <div class="date option">
+        <div class="date option" id="dateOpt">
             <label for="date" typeof="text">Date:</label>
             <input type="date" id="date" name="date" value="2024-9-11">
         </div>
 
 
-        <div class="segmented-control option">
+        <div class="segmented-control option" id="segmentOpt">
             <input type="radio" name="segment" id="morning" checked>
             <label for="morning">Morning</label>
 

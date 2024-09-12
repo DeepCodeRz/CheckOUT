@@ -57,7 +57,11 @@ checkBtn.addEventListener('click', function () {
     const minWind = document.getElementById('minWind').value;
     const maxWind = document.getElementById('maxWind').value;
 
-
+    if (minTemp <= maxTemp && minPrecipitation <= maxPrecipitation && minWind <= maxWind) {
+        error0.style.display = "none";
+    } else {
+        error0.style.display = "block";
+    }
 
     if (lat === undefined || lng === undefined) {
         error1.style.display = 'block';
@@ -73,8 +77,6 @@ checkBtn.addEventListener('click', function () {
                 break
             }
         }
-
-        console.log(date)
 
         fetch("/options", {
             method: "POST",

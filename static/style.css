@@ -27,9 +27,11 @@ body {
 .logo{
     font-size: 50px;
     font-weight: normal;
+    font-family: Montserrat, sans-serif;
     color: #2d729f;
     text-align: center;
     margin-bottom: 20px;
+    margin-left: 25%;
 }
 
 .form-group {
@@ -37,6 +39,7 @@ body {
     background-color: #F5F5F5;
     border-radius: 10px;
     padding: 20px;
+    margin-bottom: 10px;
 }
 
 label {
@@ -54,6 +57,8 @@ label {
     border-radius: 10px;
     border: 2px solid #424242;
     width: 100%;
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
 }
 
 .segmented-control {
@@ -108,8 +113,16 @@ label {
     font-weight: normal;
 }
 
+.weather-options {
+    margin-bottom: 0px;
+}
+
 .range {
     margin-left: 20px;
+}
+
+input[type="range"] {
+    accent-color: #2d729f;
 }
 
 button {
@@ -121,6 +134,8 @@ button {
     cursor: pointer;
     width: 100%;
     font-size: 16px;
+    font-family: Montserrat, sans-serif;
+    transition: 0.3s ease;
 }
 
 button:hover {
@@ -186,16 +201,17 @@ button:hover {
 .info button, .attribution button {
     background-color: #2d729f;
     color: white;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     width: 120px;
     height: 40px;
     border: none;
-    cursor: pointer;
+    transition: 0.3s;
 }
 
 .info button:hover, .attribution button:hover {
     background-color: #215373;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 #infoImg {
