@@ -100,6 +100,8 @@ checkBtn.addEventListener('click', function () {
                     error0.style.display = 'block';
                 } else if (data.error2) {
                     error2.style.display = 'block';
+                } else if (data.error3) {
+                    error3.style.display = 'block';
                 } else if (data.true) {
                     redResult.style.display = 'none';
                     greenResult.style.display = 'block';

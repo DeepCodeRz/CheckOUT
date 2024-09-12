@@ -65,10 +65,7 @@ def options():
             print(f"Temperature: {weather_data['temperature']}°C")
             print(f"Precipitation: {weather_data['precipitation']} mm")
             print(f"Wind Speed: {weather_data['wind_speed']} km/h")
-            if (weather_data['temperature'] >= minTemp and weather_data['temperature'] <= maxTemp) and (weather_data['precipitation'] >= minPrecipitation and weather_data['precipitation'] <= maxPrecipitation) and (weather_data['wind_speed'] >= minWind and weather_data['wind_speed'] <= maxWind):
-                return jsonify({"true": "true"})
-            else:
-                return jsonify({"false": "false"})
+            return jsonify({"true": "true"})
         else:
             return jsonify({"error3": "error3"})
 
