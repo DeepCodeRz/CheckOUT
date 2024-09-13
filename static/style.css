@@ -149,6 +149,8 @@ button:hover {
 .greenResult {
     margin-top: 25px;
     text-align: center;
+    position: absolute;
+    z-index: 2;
 }
 
 .greenResult p {
@@ -157,14 +159,32 @@ button:hover {
     background-color: #218838;
     padding: 50px;
     width: 100%;
-    border-radius: 12px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
     cursor: default;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+.greenResult button {
+    border: none;
+    background-color: #2d729f;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.greenResult button:hover {
+    background-color: #215373;
 }
 
 .redResult {
     margin-top: 25px;
     text-align: center;
+    position: absolute;
+    z-index: 2;
 }
 
 .redResult p {
@@ -173,9 +193,26 @@ button:hover {
     background-color: #882121;
     padding: 50px;
     width: 100%;
-    border-radius: 12px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
     cursor: default;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgb(0, 0, 0);
+}
+
+.redResult button {
+    border: none;
+    background-color: #2d729f;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.redResult button:hover {
+    background-color: #215373;
 }
 
 .credit{

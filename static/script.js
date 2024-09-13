@@ -47,6 +47,8 @@ const error1 = document.getElementById('error1');
 const error2 = document.getElementById('error2');
 const greenResult = document.getElementById('greenResult');
 const redResult = document.getElementById('redResult');
+const greenCloseBtn = document.getElementById('greenCloseBtn');
+const redCloseBtn = document.getElementById('redCloseBtn');
 
 checkBtn.addEventListener('click', function () {
     const date = document.getElementById('date').value;
@@ -104,14 +106,29 @@ checkBtn.addEventListener('click', function () {
                     error3.style.display = 'block';
                 } else if (data.true) {
                     redResult.style.display = 'none';
+                    greenResult.style.opacity = "100%"
+                    card.style.opacity = "10%"
                     greenResult.style.display = 'block';
                 } else if (data.false) {
                     greenResult.style.display = 'none';
+                    redResult.style.opacity = "100%"
+                    card.style.opacity = "10%"
                     redResult.style.display = 'block';
                 }
             })
             .catch(error => console.error('Error:', error));
     }
+
+    greenCloseBtn.addEventListener('click', function () {
+        greenResult.style.display = 'none';
+        card.style.opacity = "100%"
+    })
+
+    redCloseBtn.addEventListener('click', function () {
+        redResult.style.display = 'none';
+        card.style.opacity = "100%"
+
+    })
 });
 
 let attributionDisplay = false;

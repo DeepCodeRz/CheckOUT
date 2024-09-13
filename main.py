@@ -40,7 +40,7 @@ def options():
         return jsonify({"error0": "Invalid options!"})
     else:
 
-        url = f"https://api.met.no/weatherapi/locationforecast/2.0/mini.json?lat={lat}&lon={lng}"
+        url = f"https://api.met.no/weatherapi/locationforecast/2.0/complete?lat={lat}&lon={lng}"
 
         headers = {
             'User-Agent': 'CheckOUT!/1.0 (bedirhan_kurt_@outlook.com)'
@@ -49,6 +49,7 @@ def options():
         data = requests.get(url, headers=headers).json()
         print(data)
 
+        print(date)
         if time == "morning":
             time = date + "T10:00:00Z"
         elif time == "afternoon":
@@ -60,12 +61,15 @@ def options():
 
         timeseries = data['properties']['timeseries']
         weather_data = get_data(timeseries, time)
-
+        print(weather_data)
         if weather_data:
             print(f"Temperature: {weather_data['temperature']}°C")
             print(f"Precipitation: {weather_data['precipitation']} mm")
             print(f"Wind Speed: {weather_data['wind_speed']} km/h")
-            return jsonify({"true": "true"})
+            if (weather_data['temperature'] >= minTemp and weather_data['temperature'] <= maxTemp) and (weather_data['precipitation'] >= minPrecipitation and weather_data['precipitation'] <= maxPrecipitation) and (weather_data['wind_speed'] >= minWind and weather_data['wind_speed'] <= maxWind):
+                return jsonify({"true": "true"})
+            else:
+                return jsonify({"false": "false"})
         else:
             return jsonify({"error3": "error3"})
 
