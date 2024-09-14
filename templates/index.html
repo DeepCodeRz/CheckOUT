@@ -55,28 +55,28 @@
             <label style="font-weight: bold">Weather Options</label>
             <label>Temperature (Min-Max)
                 <div class="range-slider">
-                    <input name="minTemp" type="range" id="minTemp" min="-10" max="40" value="-10" oninput="this.nextElementSibling.value = this.value">
-                    <output>0</output> °C
-                    <input name="maxTemp" type="range" class="range" id="maxTemp" min="-10" max="40" value="-10" oninput="this.nextElementSibling.value = this.value">
-                    <output>0</output> °C
+                    <input name="minTemp" type="range" id="minTemp" min="-10" max="40" value="-10" oninput="this.nextElementSibling.value = this.value + ' °C'">
+                    <output>0 °C</output>
+                    <input name="maxTemp" type="range" class="range" id="maxTemp" min="-10" max="40" value="-10" oninput="this.nextElementSibling.value = this.value + ' °C'">
+                    <output>0 °C</output>
                 </div>
             </label><br>
 
             <label>Precipitation (Min-Max)
                 <div class="range-slider ">
-                    <input name="minPrecipitation" type="range" id="minPrecipitation" min="0.00" max="6.00" step="0.1" value="0" oninput="this.nextElementSibling.value = this.value">
-                    <output>0</output> mm
-                    <input name="maxPrecipitation" type="range" class="range" id="maxPrecipitation" min="0.00" max="6.00" step="0.1" value="0" oninput="this.nextElementSibling.value = this.value">
-                    <output>0</output> mm
+                    <input name="minPrecipitation" type="range" id="minPrecipitation" min="0.00" max="6.00" step="0.1" value="0" oninput="this.nextElementSibling.value = this.value + ' mm'">
+                    <output>0 mm</output>
+                    <input name="maxPrecipitation" type="range" class="range" id="maxPrecipitation" min="0.00" max="6.00" step="0.1" value="0" oninput="this.nextElementSibling.value = this.value + ' mm'">
+                    <output>0 mm</output>
                 </div>
             </label><br>
 
             <label>Wind (Min-Max)
                 <div class="range-slider">
-                    <input name="minWind" type="range" id="minWind" min="1" max="12" value="0" oninput="this.nextElementSibling.value = this.value">
-                    <output>0</output> m/s
-                    <input name="maxWind" type="range" class="range" id="maxWind" min="1" max="12" value="0" oninput="this.nextElementSibling.value = this.value">
-                    <output>0</output> m/s
+                    <input name="minWind" type="range" id="minWind" min="1" max="12" value="0" oninput="this.nextElementSibling.value = this.value + ' m/s'">
+                    <output>0 m/s</output>
+                    <input name="maxWind" type="range" class="range" id="maxWind" min="1" max="12" value="0" oninput="this.nextElementSibling.value = this.value + ' m/s'">
+                    <output>0 m/s</output>
                 </div>
             </label>
             <p id="error0" style="color: red; font-size: 18px; width: 100%; display: none;">You gave invalid values. Please check the values and try again.</p>
@@ -108,11 +108,12 @@
 
 <div class="attributionCard">
 
-    <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-lisens" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Data from MET Norway and licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Navngivelse 4.0 Internasjonal lisens</a>
+    <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-lisens" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Data from MET Norway and licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" style="color: black">Creative Commons Navngivelse 4.0 Internasjonal lisens</a>
 </div>
 
 <div class="credit">Developed by <strong>Bedirhan KURT</strong></div>
 
 <script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="{{ url_for('static', filename='rangeSliders.js') }}"></script>
 </body>
 </html>

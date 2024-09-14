@@ -48,6 +48,7 @@ label {
     font-weight: bold;
 
 }
+
 .option{
     margin-bottom: 30px;
 }
@@ -88,10 +89,6 @@ label {
     font-weight: normal;
 }
 
-.segmented-control label:last-child {
-    border-right: none;
-}
-
 .segmented-control input[type="radio"]:checked + label {
     background-color: #2d729f;
     color: white;
@@ -103,10 +100,6 @@ label {
 
 .segmented-control label:last-child {
     border-right: none;
-}
-
-.segmented-control label:hover {
-    background-color: #ddd;
 }
 
 .weather-options label {
@@ -121,8 +114,17 @@ label {
     margin-left: 20px;
 }
 
+#maxTemp {
+    margin-left: 28px;
+}
+
 input[type="range"] {
     accent-color: #2d729f;
+}
+
+output {
+    font-size: 20px;
+    scale: 140%;
 }
 
 button {
@@ -173,7 +175,7 @@ button:hover {
     border-top-left-radius: 0px;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
-    box-shadow: 0 0 20px rgb(0, 0, 0);
+    box-shadow: 0 0 15px rgb(0, 0, 0);
 }
 
 .greenResult button:hover {
@@ -202,13 +204,14 @@ button:hover {
 }
 
 .redResult button {
+    height: 50px;
     border: none;
     background-color: #2d729f;
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
-    box-shadow: 0 0 20px rgb(0, 0, 0);
+    box-shadow: 0 0 15px rgb(0, 0, 0);
 }
 
 .redResult button:hover {

@@ -50,6 +50,7 @@ const redResult = document.getElementById('redResult');
 const greenCloseBtn = document.getElementById('greenCloseBtn');
 const redCloseBtn = document.getElementById('redCloseBtn');
 
+
 checkBtn.addEventListener('click', function () {
     const date = document.getElementById('date').value;
     const minTemp = document.getElementById('minTemp').value;
