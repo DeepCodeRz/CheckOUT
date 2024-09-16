@@ -32,11 +32,11 @@
 
 .dark-mode .segmented-control input[type="radio"]:checked + label {
     background-color: #ffffff;
-    color: #396480;
+    color: #173c54;
 }
 
 .dark-mode .segmented-control label {
-    background-color: #173c54;
+    background-color: #2b4c62;
     color: #ffffff;
 }
 
