@@ -112,7 +112,13 @@
     <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-lisens" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Data from MET Norway and licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" style="color: black">Creative Commons Navngivelse 4.0 Internasjonal lisens</a>
 </div>
 
-<button id="darkModeBtn">darkmode</button>
+<label class="switch">
+    <input type="checkbox" id="darkModeBtn">
+    <span class="slider"></span>
+</label>
+
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
 <div class="credit">Developed by <strong>Bedirhan KURT</strong></div>
 
 <script src="{{ url_for('static', filename='script.js') }}"></script>

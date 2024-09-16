@@ -86,8 +86,6 @@ def options():
             elif time == (date + "T20:00:00Z"):
                 time = date + "T18:00:00Z"
 
-            print(time + "jknfwoenf")
-
             weather_data = get_data(timeseries, time)
             print(get_data(timeseries, time))
 

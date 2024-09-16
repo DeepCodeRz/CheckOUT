@@ -1,7 +1,46 @@
-body .dark-mode {
-    background-color: #000;
+.dark-mode {
+    background-color: #133142;
 }
 
-body a .dark-mode{
-    color: #fff;
+.dark-mode .card {
+    background-color: #173c54;
+}
+
+.dark-mode .logo {
+    color: #ffffff;
+}
+
+.dark-mode h3 {
+    color: #ffffff;
+}
+
+.dark-mode p {
+    color: #ffffff;
+}
+
+.dark-mode .credit {
+    color: #ffffff;
+}
+
+.dark-mode .form-group {
+    background-color: #396480;
+}
+
+.dark-mode label {
+    color: #ffffff;
+}
+
+.dark-mode .segmented-control input[type="radio"]:checked + label {
+    background-color: #ffffff;
+    color: #396480;
+}
+
+.dark-mode .segmented-control label {
+    background-color: #173c54;
+    color: #ffffff;
+}
+
+.segmented-control label:hover {
+    background-color: #ffffff;
+    color: #173c54;
 }

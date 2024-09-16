@@ -1,6 +1,10 @@
 const darkModeBtn = document.getElementById("darkModeBtn");
-const body = document.body
+const body = document.body;
 
-darkModeBtn.addEventListener("click", function() {
-    body.classList.toggle("dark-mode");
-})
+darkModeBtn.addEventListener("change", function() {
+    if (darkModeBtn.checked) {
+        body.classList.add("dark-mode");
+    } else {
+        body.classList.remove("dark-mode");
+    }
+});
