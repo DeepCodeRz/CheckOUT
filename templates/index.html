@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CheckOUT!</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dark-mode.css') }}">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="https://use.typekit.net/urx8ynj.css">
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
@@ -111,9 +112,11 @@
     <a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-lisens" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Data from MET Norway and licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" style="color: black">Creative Commons Navngivelse 4.0 Internasjonal lisens</a>
 </div>
 
+<button id="darkModeBtn">darkmode</button>
 <div class="credit">Developed by <strong>Bedirhan KURT</strong></div>
 
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 <script src="{{ url_for('static', filename='rangeSliders.js') }}"></script>
+<script src="{{ url_for('static', filename='darkMode.js') }}"></script>
 </body>
 </html>
