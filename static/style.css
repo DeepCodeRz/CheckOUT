@@ -110,6 +110,13 @@ label {
     margin-bottom: 0px;
 }
 
+.ranges {
+    width: 100%;
+    left: 9%;
+    margin-top: 3%;
+    position: relative;
+}
+
 .range {
     margin-left: 20px;
 }

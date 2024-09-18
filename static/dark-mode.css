@@ -40,7 +40,11 @@
     color: #ffffff;
 }
 
-.segmented-control label:hover {
-    background-color: #ffffff;
+.dark-mode .segmented-control label:hover {
+    background-color: #ddd;
     color: #173c54;
+}
+
+.dark-mode input[type="range"] {
+    accent-color: #173c54;
 }
