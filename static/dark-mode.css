@@ -48,3 +48,7 @@
 .dark-mode input[type="range"] {
     accent-color: #173c54;
 }
+
+.dark-mode .dark-mode-label {
+    color: #ffffff;
+}

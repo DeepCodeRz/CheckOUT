@@ -1,6 +1,5 @@
-from flask import Flask, render_template, request, jsonify
 import requests
-import json
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
@@ -67,6 +66,7 @@ def options():
             print(f"Temperature: {weather_data['temperature']}°C")
             print(f"Precipitation: {weather_data['precipitation']} mm")
             print(f"Wind Speed: {weather_data['wind_speed']} km/h")
+            print(minTemp, maxTemp, minPrecipitation, maxPrecipitation, minWind, maxWind)
             if (minTemp <= weather_data['temperature'] <= maxTemp) and (
                     weather_data['precipitation'] >= minPrecipitation and weather_data[
                 'precipitation'] <= maxPrecipitation) and (
@@ -106,4 +106,4 @@ def options():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5002)
+    app.run(debug=True, port=5003)

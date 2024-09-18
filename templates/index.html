@@ -75,7 +75,7 @@
 
                 <label>Wind (Min-Max)
                     <div class="range-slider">
-                        <input name="minWind" type="range" id="minWind" min="1" max="12" value="0" oninput="this.nextElementSibling.value = this.value + ' m/s'">
+                        <input name="minWind" type="range" id="minWind" min="0" max="12" value="0" oninput="this.nextElementSibling.value = this.value + ' m/s'">
                         <output>0 m/s 🌬️🍃</output>
                         <input name="maxWind" type="range" class="range" id="maxWind" min="1" max="12" value="0" oninput="this.nextElementSibling.value = this.value + ' m/s'">
                         <output>0 m/s 🌬️🍃</output>
@@ -114,7 +114,7 @@
 </div>
 
 <label class="switch">
-    <p style="width: 100px; margin-top: 4px; right: 55px; position: absolute">Dark mode: </p>
+    <p class="dark-mode-label">Dark mode: </p>
     <input type="checkbox" id="darkModeBtn">
     <span class="slider"></span>
 </label>

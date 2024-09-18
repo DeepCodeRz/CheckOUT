@@ -45,6 +45,7 @@ const checkBtn = document.getElementById('checkBtn');
 const error0 = document.getElementById('error0');
 const error1 = document.getElementById('error1');
 const error2 = document.getElementById('error2');
+const error3 = document.getElementById('error3');
 const greenResult = document.getElementById('greenResult');
 const redResult = document.getElementById('redResult');
 const greenCloseBtn = document.getElementById('greenCloseBtn');
@@ -53,24 +54,28 @@ const redCloseBtn = document.getElementById('redCloseBtn');
 
 checkBtn.addEventListener('click', function () {
     const date = document.getElementById('date').value;
-    const minTemp = document.getElementById('minTemp').value;
-    const maxTemp = document.getElementById('maxTemp').value;
-    const minPrecipitation = document.getElementById('minPrecipitation').value;
-    const maxPrecipitation = document.getElementById('maxPrecipitation').value;
-    const minWind = document.getElementById('minWind').value;
-    const maxWind = document.getElementById('maxWind').value;
+    const minTemp = Number(document.getElementById('minTemp').value);
+    const maxTemp = Number(document.getElementById('maxTemp').value);
+    const minPrecipitation = Number(document.getElementById('minPrecipitation').value);
+    const maxPrecipitation = Number(document.getElementById('maxPrecipitation').value);
+    const minWind = Number(document.getElementById('minWind').value);
+    const maxWind = Number(document.getElementById('maxWind').value);
 
     if (minTemp <= maxTemp && minPrecipitation <= maxPrecipitation && minWind <= maxWind) {
         error0.style.display = "none";
     } else {
         error0.style.display = "block";
+        console.log(minTemp, maxTemp, minPrecipitation, maxPrecipitation, minWind, maxWind);
     }
+
 
     if (lat === undefined || lng === undefined) {
         error1.style.display = 'block';
     } else {
         error1.style.display = 'none';
     }
+
+    error3.style.display = 'none';
 
     if (error0.style.display === 'none' && error1.style.display === 'none') {
         let time = document.getElementsByName("segment")

@@ -59,24 +59,24 @@ maxPrecipitation.addEventListener('input', function () {
 
 minWind.addEventListener('input', function () {
     if (minWind.value >= 0 && minWind.value < 4) {
-        minWind.nextElementSibling.value = minWind.value + ' 🌬️🍃';
+        minWind.nextElementSibling.value = minWind.nextElementSibling.value + ' 🌬️🍃';
     } else if (minWind.value >= 4 && minWind.value < 7) {
-        minWind.nextElementSibling.value = minWind.value + ' 💨🌲';
+        minWind.nextElementSibling.value = minWind.nextElementSibling.value + ' 💨🌲';
     } else if (minWind.value >= 7 && minWind.value < 11) {
-        minWind.nextElementSibling.value = minWind.value + ' 🌪️🌀';
+        minWind.nextElementSibling.value = minWind.nextElementSibling.value + ' 🌪️🌀';
     } else if (minWind.value > 10) {
-        minWind.nextElementSibling.value = minWind.value + ' 🌪️⚠️';
+        minWind.nextElementSibling.value = minWind.nextElementSibling.value + ' 🌪️⚠️';
     }
 });
 
 maxWind.addEventListener('input', function () {
     if (maxWind.value >= 0 && maxWind.value < 4) {
-        maxWind.nextElementSibling.value = maxWind.value + ' 🌬️🍃';
+        maxWind.nextElementSibling.value = maxWind.nextElementSibling.value + ' 🌬️🍃';
     } else if (maxWind.value >= 4 && maxWind.value < 7) {
-        maxWind.nextElementSibling.value = maxWind.value + ' 💨🌲';
+        maxWind.nextElementSibling.value = maxWind.nextElementSibling.value + ' 💨🌲';
     } else if (maxWind.value >= 7 && maxWind.value < 11) {
-        maxWind.nextElementSibling.value = maxWind.value + ' 🌪️🌀';
+        maxWind.nextElementSibling.value = maxWind.nextElementSibling.value + ' 🌪️🌀';
     } else if (maxWind.value > 10) {
-        maxWind.nextElementSibling.value = maxWind.value + ' 🌪️⚠️';
+        maxWind.nextElementSibling.value = maxWind.nextElementSibling.value + ' 🌪️⚠️';
     }
 });
