@@ -16,4 +16,4 @@
 
 ---
 
-This project’s front-end development has utilized artificial intelligence.
+This project’s front-end development has utilized artificial intelligence v0.dev.
