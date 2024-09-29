@@ -30,8 +30,6 @@ CheckOUT! is a web application that utilizes an API to assess whether it's appro
    ```
 
 ## Note
-This project's front-end development has utilized artificial intelligence.
+This project's front-end development has utilized artificial intelligence v0.dev.
 
 --- 
-
-Feel free to modify any part of this as needed!
