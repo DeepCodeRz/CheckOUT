@@ -15,3 +15,5 @@
 - Python (Flask)
 
 ---
+
+This project’s front-end development has utilized artificial intelligence.
