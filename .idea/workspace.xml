@@ -240,13 +240,6 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-WS-242.20224.426" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -293,6 +286,7 @@
       <workItem from="1726658972415" duration="2858000" />
       <workItem from="1726676723925" duration="102000" />
       <workItem from="1727627508296" duration="465000" />
+      <workItem from="1727628039071" duration="69000" />
     </task>
     <servers />
   </component>
