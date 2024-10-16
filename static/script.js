@@ -121,6 +121,23 @@ checkBtn.addEventListener('click', function () {
                     card.style.opacity = "10%"
                     redResult.style.display = 'block';
                 }
+                const setDisplay = (element, display) => {element.style.display = display;};
+                const setOpacity = (element, opacity) => {element.style.opacity = opacity;};
+                const setDisplayBlock = element => {element.style.display = 'block';};
+                switch (data) {
+                    case data.error0: setDisplay(error0, "block"); break;
+                    case data.error2: setDisplay(error2, "block"); break;
+                    case data.true:
+                        setDisplay(redResult, "none" );
+                        setOpacity(greenResult, "100%");
+                        setOpacity(card, "10%")
+                        setDisplay(greenResult, "block"); break;
+                    case data.false:
+                        greenResult.style.display = 'none';
+                        redResult.style.opacity = "100%"
+                        card.style.opacity = "10%"
+                        redResult.style.display = 'block';
+                }
             })
             .catch(error => console.error('Error:', error));
     }
