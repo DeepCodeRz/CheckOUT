@@ -16,7 +16,7 @@ CheckOUT! is a web application that utilizes an API to assess whether it's appro
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/DeepoweRs/CheckOUT.git
+   git clone https://github.com/DeepCodeRz/CheckOUT.git
    ```
 2. Navigate to the project directory:
    ```bash
